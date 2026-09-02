@@ -77,29 +77,32 @@ int main() {
                 cout << "Enter the item to be enqueued: ";
                 cin >> info;
                 q.enqueue(info);
+                cout << "Front: " << q.front << ", Rear: " << q.rear << endl;
                 break;
             case 2:
                 info = q.dequeue();
                 if (info != -1) {
                     cout << "Dequeued: " << info << endl;
                 }
+                cout << "Front: " << q.front << ", Rear: " << q.rear << endl;
                 break;
             case 3:
                 q.traverse();
+                cout << "Front: " << q.front << ", Rear: " << q.rear << endl;
                 break;
             case 4:
-                if (q.isEmpty()) {
-                    cout << "Queue is empty." << endl;
-                } else {
-                    cout << "Queue is not empty." << endl;
-                }
+                cout << (q.isEmpty() ? "Queue is empty." : "Queue is not empty.") << endl;
                 break;
             case 5:
-                cout << "Exiting..." << endl;
+                cout << (q.isFull() ? "Queue is full." : "Queue is not full.") << endl;
+                break;
+            case 6:
+                cout << "This code is exectued by Ansh Kaushik with Roll No. 2503201000222 " << endl;
                 break;
             default:
-                cout << "Invalid choice." << endl;
+                cout << "Invalid choice. Try again." << endl;
         }
     } while (ch != 6);
+    system("pause");
     return 0;
 }
